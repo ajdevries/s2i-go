@@ -23,7 +23,7 @@ cd $SOURCE
 echo "---> Downloading dependencies..."
 go get -v ./...
 
-echo "---> Building application source as main in $(SOURCE)..."
+echo "---> Building application source as main in $SOURCE..."
 go build -v -o main
 
 echo

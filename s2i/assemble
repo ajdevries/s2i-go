@@ -13,7 +13,7 @@ function finish {
 }
 trap finish EXIT
 
-echo "---> Preparing source..."
+echo "---> Preparing source... ($SOURCE)"
 mkdir -p $SOURCE
 
 cp -Rf /tmp/src/. $SOURCE
@@ -23,9 +23,8 @@ cd $SOURCE
 echo "---> Downloading dependencies..."
 go get -v ./...
 
-echo "---> Building application source..."
+echo "---> Building application source as main in $(SOURCE)..."
 go build -v -o main
-go install main
 
 echo
 echo "===> Build completed at $(date)"
